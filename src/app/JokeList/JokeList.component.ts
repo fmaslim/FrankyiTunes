@@ -1,21 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JokeComponent } from '../joke/joke.component';
-
-export class Joke {
-  setup: string;
-  punchline: string;
-  hide: boolean;
-
-  constructor (setup: string, punchline: string) {
-    this.setup = setup;
-    this.punchline = punchline;
-    this.hide = true;
-  }
-
-  toggle() {
-    this.hide = !this.hide;
-  }
-}
+import { JokeComponent, Joke } from '../joke/joke.component';
 
 @Component({
   selector: 'app-joke-list',

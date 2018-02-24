@@ -1,4 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+export class Joke {
+  setup: string;
+  punchline: string;
+  hide: boolean;
+
+  constructor (setup: string, punchline: string) {
+    this.setup = setup;
+    this.punchline = punchline;
+    this.hide = true;
+  }
+
+  toggle() {
+    this.hide = !this.hide;
+  }
+}
 
 @Component({
   selector: 'app-joke',
@@ -6,12 +22,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./joke.component.css']
 })
 export class JokeComponent implements OnInit {
-  setup: string;
-  punchline: string;
+  // By pre-prending a property with @Input, this makes it bindable to
+  // the component user, so that it can pass in a value to this component to be used
+  @Input() joke: Joke;
 
   constructor() {
-    this.setup = 'What did the cheese say when it looked in the mirror?';
-    this.punchline = 'Halloumi (Hello me)';
   }
 
   ngOnInit() {
