@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export class Joke {
   setup: string;
@@ -25,6 +25,7 @@ export class JokeComponent implements OnInit {
   // By pre-prending a property with @Input, this makes it bindable to
   // the component user, so that it can pass in a value to this component to be used
   @Input() joke: Joke;
+  @Output() jokeDeleted = new EventEmitter<Joke>();
 
   constructor() {
   }
@@ -32,4 +33,7 @@ export class JokeComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteJoke(setup: string, punchline: string) {
+    this.jokeDeleted.emit(new Joke(setup, punchline));
+  }
 }
