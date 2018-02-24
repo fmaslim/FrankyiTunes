@@ -8,7 +8,7 @@ export class Joke {
   constructor (setup: string, punchline: string) {
     this.setup = setup;
     this.punchline = punchline;
-    this.hide = true;
+    this.hide = false;
   }
 
   toggle() {

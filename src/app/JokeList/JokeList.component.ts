@@ -22,7 +22,7 @@ export class JokeListComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggle(joke) {
-    joke.hide = !joke.hide;
+  addJoke(joke) {
+    this.jokes.unshift(joke);
   }
 }
