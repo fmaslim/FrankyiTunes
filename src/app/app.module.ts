@@ -10,7 +10,7 @@ import { JokeListComponent } from './JokeList/JokeList.component';
 @NgModule({
   declarations: [
     AppComponent,
-    JokeComponent,
+    JokeComponent,
     JokeListComponent
 ],
   imports: [
