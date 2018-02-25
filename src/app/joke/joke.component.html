@@ -1,4 +1,4 @@
-<div class="card card-block">
+<div class="card card-block" style="padding: 10px; background-color:grey; ">
   <h4 class="card-title" #setup>{{ joke.setup }}</h4>
   <p class="card-text" [hidden]="joke.hide" #punchline>{{ joke.punchline }}</p>
   <a class="btn btn-primary" (click)="joke.toggle()">Tell Me</a>
@@ -6,3 +6,4 @@
   <br />
   <a class="btn btn-primary" (click)="deleteJoke(setup.value, punchline.value)">Delete this joke</a>
 </div>
+<br />

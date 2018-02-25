@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 export class Joke {
   setup: string;
@@ -16,10 +16,13 @@ export class Joke {
   }
 }
 
+// ViewEncapsulation.Native - styles set on a component do not leak outside the component scope
+
 @Component({
   selector: 'app-joke',
   templateUrl: './joke.component.html',
-  styleUrls: ['./joke.component.css']
+  styleUrls: ['./joke.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class JokeComponent implements OnInit {
   // By pre-prending a property with @Input, this makes it bindable to
