@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Joke } from '../joke/joke.component';
+import { CardHoverDirective } from '../directives/cardHover.directive';
 
 @Component({
   selector: 'app-joke-projection',

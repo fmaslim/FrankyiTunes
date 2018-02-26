@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JokeComponent, Joke } from '../joke/joke.component';
+import { CardHoverDirective } from '../directives/cardHover.directive';
 
 @Component({
   selector: 'app-joke-list',

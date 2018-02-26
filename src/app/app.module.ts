@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Directive } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
@@ -14,8 +14,7 @@ import { CardHoverDirective } from './directives/cardHover.directive';
     AppComponent,
     JokeComponent,
     JokeListComponent,
-    JokeFormComponent
-,
+    JokeFormComponent,
     JokeProjectionComponent,
     CardHoverDirective
 ],
