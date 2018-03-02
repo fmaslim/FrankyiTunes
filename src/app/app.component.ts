@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RolloverDirective } from './directives/rollover.directive';
+import { CardHoverDirective } from './directives/cardHover.directive';
 
 @Component({
   selector: 'app-root',

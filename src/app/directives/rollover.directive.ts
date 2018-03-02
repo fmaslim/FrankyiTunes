@@ -14,18 +14,18 @@ import { Directive, ElementRef, Renderer, HostListener, HostBinding, Input } fro
 // To associate a directive to an element with a certain attribute, wrap the name of the attribute with []
 
 @Directive({
-  selector: '[appCardHover]'
+  selector: '[appRollover]'
 })
-export class CardHoverDirective {
+export class RolloverDirective {
   // See explanation in the HostListener method below
   // To be able to use this in the host with the selector name, put an alias as the param
-  @Input('appCardHover') config: Object = {
-    querySelector: '.card-text'
+  @Input('appRollover') config: Object = {
+    querySelector: '.card-text',
+    initial: 'https://unsplash.it/200/300?image=201',
+    over: 'https://unsplash.it/200/300?image=202'
   };
 
   // This property is used for @HostBinding
-  @HostBinding('class.red-border') private isHovering: boolean;
-
   // When the directive gets created, Angular can inject an instance of something called ElementRef into the constructor.
   // ElementRef gives the directive a direct access to the DOM element upon which it is attached.
   // Renderer is a platform-independent way of setting properties on elements.
@@ -40,14 +40,12 @@ export class CardHoverDirective {
     // One way to do that is to use the query selector for the element to hide/show
     // By moving it to a property in this class
     const part = this.elm.nativeElement.querySelector(this.config['querySelector']);
-    this.renderer.setElementStyle(part, 'display', 'block');
-    this.isHovering = true;
+    this.renderer.setElementAttribute(part, 'src', this.config['over']);
   }
 
   @HostListener('mouseout') onmouseout() {
-    const part = this.elm.nativeElement.querySelector('.card-text');
-    this.renderer.setElementStyle(part, 'display', 'none');
-    this.isHovering = false;
+    const part = this.elm.nativeElement.querySelector('querySelector');
+    this.renderer.setElementAttribute(part, 'src', this.config['initial']);
   }
 
 

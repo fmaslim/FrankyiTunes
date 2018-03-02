@@ -8,6 +8,7 @@ import { JokeListComponent } from './JokeList/JokeList.component';
 import { JokeFormComponent } from './joke-form/joke-form.component';
 import { JokeProjectionComponent } from './joke-projection/joke-projection.component';
 import { CardHoverDirective } from './directives/cardHover.directive';
+import { RolloverDirective } from './directives/rollover.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CardHoverDirective } from './directives/cardHover.directive';
     JokeListComponent,
     JokeFormComponent,
     JokeProjectionComponent,
-    CardHoverDirective
+    CardHoverDirective,
+    RolloverDirective
 ],
   imports: [
     BrowserModule

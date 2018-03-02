@@ -2,7 +2,7 @@
 
 <app-joke-projection *ngFor="let j of jokes; let i = index" [joke]="j">
   <h4 class="card-title" #setup>{{ i + 1 }}. {{ j.setup }}</h4>
-  <p class="card-text" [hidden]="j.hide" #punchline>{{ j.punchline }}</p>
+  <p class="card-text" [hidden]="j.hide" [style.display]="'none'" #punchline>{{ j.punchline }}</p>
   <a class="btn btn-primary" (click)="deleteJoke(j)">Delete this joke</a>
 </app-joke-projection>
 
