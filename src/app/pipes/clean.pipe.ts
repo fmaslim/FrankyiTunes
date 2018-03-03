@@ -13,7 +13,7 @@ export class CleanPipe implements PipeTransform {
     for (let index = 0; index <= args.length; index++) {
       if (value.indexOf(args[index]) > 0) {
         console.log('Index of current search: ' + index);
-        value = value.replace(args[index], 'blah');
+        value = value.replace(args[index].toLowerCase(), 'blah');
       }
     }
 
