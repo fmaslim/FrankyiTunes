@@ -25,8 +25,14 @@
 </ul>
 
 <br />
-<img class="card-text" [appRollover]="{ querySelector: 'initial' }" />
-
+<img [src]="imageUrl | default: ['http://i.istockimg.com/file_thumbview_approve/1354938/1/stock-photo-1354938-businesswoman-headache.jpg'
+                              , 'https://s3.amazonaws.com/uifaces/faces/twitter/sillyleo/128.jpg'] "/>
+<br />
+<br />
+<p>
+  {{ defaultCleanPipeText | clean: ['damn', 'hell', 'stupid', 'bitch'] }}
+</p>
+<br />
 <br />
 <div style="width: 50%; padding: 15px;">
   <app-joke-list></app-joke-list>

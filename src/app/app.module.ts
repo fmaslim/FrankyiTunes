@@ -9,6 +9,8 @@ import { JokeFormComponent } from './joke-form/joke-form.component';
 import { JokeProjectionComponent } from './joke-projection/joke-projection.component';
 import { CardHoverDirective } from './directives/cardHover.directive';
 import { RolloverDirective } from './directives/rollover.directive';
+import { DefaultPipe } from './pipes/image-default.pipe';
+import { CleanPipe } from './pipes/clean.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RolloverDirective } from './directives/rollover.directive';
     JokeFormComponent,
     JokeProjectionComponent,
     CardHoverDirective,
-    RolloverDirective
+    RolloverDirective,
+    DefaultPipe,
+    CleanPipe
 ],
   imports: [
     BrowserModule
