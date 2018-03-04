@@ -1,0 +1,10 @@
+<div class="form-group">
+  <label>Search</label>
+  <input type="search" class="form-control" placeholder="Please enter a search text" [formControl]="searchField">
+</div>
+
+<ul>
+  <li *ngFor="let term of searches">
+    {{ term }}
+  </li>
+</ul>
