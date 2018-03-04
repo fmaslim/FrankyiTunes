@@ -21,6 +21,8 @@ export class ModelDrivenFormComponent implements OnInit {
   password: FormControl;
   language: FormControl;
 
+  test: string;
+
   constructor() { }
 
   ngOnInit() {
@@ -63,4 +65,12 @@ export class ModelDrivenFormComponent implements OnInit {
     });
   }
 
+  onSubmit() {
+    if (this.myForm.valid) {
+      this.test = 'Form is valid and has been submitted';
+      this.myForm.reset();
+    } else {
+      this.test = 'I don\'t know what you\'re trying to do';
+    }
+  }
 }

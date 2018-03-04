@@ -1,4 +1,8 @@
-<form [formGroup]="myForm">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <br />
+  {{ test }}
 
   <pre>First name dirty: {{ firstName.dirty }}</pre>
   <pre>Last name dirty: {{ lastName.pristine }}</pre>
@@ -13,8 +17,14 @@
       <label>First Name</label>
       <input type="text" class="form-control" formControlName="firstName">
     </div>
+    <div *ngIf="firstName.dirty" [ngClass]="'red-text'">
+      <label>First Name label has been edited.</label>
+    </div>
     <!-- LAST NAME -->
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{
+      'has-danger': lastName.dirty,
+      'has-success': lastName.pristine
+    }">
         <label>Last Name</label>
         <input type="text" class="form-control" formControlName="lastName">
       </div>
