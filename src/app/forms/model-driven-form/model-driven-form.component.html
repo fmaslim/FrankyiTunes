@@ -1,0 +1,39 @@
+<form [formGroup]="myForm">
+
+  <pre>{{ myForm.value | json }}</pre>
+
+  <br />
+  <fieldset formGroupName="name">
+    <!-- FIRST NAME -->
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control" formControlName="firstName">
+    </div>
+    <!-- LAST NAME -->
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName">
+      </div>
+  </fieldset>
+
+  <!-- EMAIL -->
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" class="form-control" formControlName="email">
+  </div>
+
+  <!-- PASSWORD -->
+  <div class="form-group">
+    <label>Password</label>
+    <input type="text" class="form-control" formControlName="password">
+  </div>
+
+  <!-- LANGUAGE -->
+  <div class="form-group">
+    <label>Language:</label>
+    <select class="form-control" formControlName="language">
+      <option value="">Please select a language</option>
+      <option *ngFor="let language of langs" [value]="language">{{ language }}</option>
+    </select>
+  </div>
+</form>

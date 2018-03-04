@@ -11,6 +11,8 @@ import { CardHoverDirective } from './directives/cardHover.directive';
 import { RolloverDirective } from './directives/rollover.directive';
 import { DefaultPipe } from './pipes/image-default.pipe';
 import { CleanPipe } from './pipes/clean.pipe';
+import { ModelDrivenFormComponent } from './forms/model-driven-form/model-driven-form.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,11 @@ import { CleanPipe } from './pipes/clean.pipe';
     CardHoverDirective,
     RolloverDirective,
     DefaultPipe,
-    CleanPipe
+    CleanPipe,
+    ModelDrivenFormComponent,
 ],
   imports: [
-    BrowserModule
+    BrowserModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
