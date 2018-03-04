@@ -14,6 +14,7 @@ import { CleanPipe } from './pipes/clean.pipe';
 import { ModelDrivenFormComponent } from './forms/model-driven-form/model-driven-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ReactiveModelFormComponent } from './forms/reactive-model-form/reactive-model-form.component';
+import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { ReactiveModelFormComponent } from './forms/reactive-model-form/reactive
     CleanPipe,
     ModelDrivenFormComponent,
     ReactiveModelFormComponent,
+    TemplateDrivenFormComponent
 ],
   imports: [
-    BrowserModule, ReactiveFormsModule
+    BrowserModule, ReactiveFormsModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
