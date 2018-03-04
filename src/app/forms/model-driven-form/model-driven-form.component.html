@@ -1,11 +1,15 @@
 <form [formGroup]="myForm">
 
-  <pre>{{ myForm.value | json }}</pre>
+  <pre>First name dirty: {{ firstName.dirty }}</pre>
+  <pre>Last name dirty: {{ lastName.pristine }}</pre>
 
   <br />
   <fieldset formGroupName="name">
     <!-- FIRST NAME -->
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{
+      'has-danger': firstName.dirty,
+      'has-success': firstName.pristine
+    }">
       <label>First Name</label>
       <input type="text" class="form-control" formControlName="firstName">
     </div>
