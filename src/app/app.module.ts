@@ -15,6 +15,8 @@ import { ModelDrivenFormComponent } from './forms/model-driven-form/model-driven
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ReactiveModelFormComponent } from './forms/reactive-model-form/reactive-model-form.component';
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
+import { JokeModelDrivenFormComponent } from './forms/joke-model-driven-form/joke-model-driven-form.component';
+import { JokeListModelDrivenComponent } from './forms/joke-list-model-driven/joke-list-model-driven.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { TemplateDrivenFormComponent } from './forms/template-driven-form/templa
     CleanPipe,
     ModelDrivenFormComponent,
     ReactiveModelFormComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    JokeModelDrivenFormComponent,
+    JokeListModelDrivenComponent
 ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule

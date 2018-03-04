@@ -1,0 +1,12 @@
+<app-joke-model-driven-form (jokeCreated)="addJoke($event)"></app-joke-model-driven-form>
+
+<div class="form-group" *ngFor="let j of jokes">
+  <div class="form-group">
+    <label>Setup</label>
+    <label>{{ j.setup }}</label>
+  </div>
+  <div class="form-group">
+    <label>Punchline</label>
+    <label>{{ j.punchline }}</label>
+  </div>
+</div>
