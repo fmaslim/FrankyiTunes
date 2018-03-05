@@ -34,6 +34,10 @@ import { ProviderChildComponent } from './dependency injection/provider-child/pr
 
 import { SimpleService } from './dependency injection/providers/providers.component';
 
+import { Http, HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpComponent } from './http API/http/http.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,12 +55,13 @@ import { SimpleService } from './dependency injection/providers/providers.compon
     JokeModelDrivenFormComponent,
     JokeListModelDrivenComponent,
     ProvidersComponent,
-    ProviderChildComponent
+    ProviderChildComponent,
+    HttpComponent,
 ],
   imports: [
-    BrowserModule, ReactiveFormsModule, FormsModule
+    BrowserModule, ReactiveFormsModule, FormsModule, HttpModule
   ],
-  providers: [SimpleService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

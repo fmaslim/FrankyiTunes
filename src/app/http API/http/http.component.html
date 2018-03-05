@@ -1,0 +1,24 @@
+<div class="row">
+  <button type="button" class="btn btn-primary" (click)="doGet()">GET</button>
+  {{ getData }}
+</div>
+
+<div class="row">
+  <button type="button" class="btn btn-primary" (click)="doPost()">POST</button>
+  {{ postData }}
+</div>
+
+<div class="row">
+  <button type="button" class="btn btn-primary" (click)="doPut()">PUT</button>
+  {{ putData }}
+</div>
+
+<div class="row">
+  <button type="button" class="btn btn-primary" (click)="doDelete()">DELETE</button>
+  {{ deleteData }}
+</div>
+
+<div class="row">
+    <button type="button" class="btn btn-primary" (click)="doGetAsPromise()">GET as Promise</button>
+    {{ getAsPromiseData }}
+  </div>
