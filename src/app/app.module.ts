@@ -39,6 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpComponent } from './http API/http/http.component';
 import { HttpPromiseComponent } from './http API/http-promise/http-promise.component';
 import { HttpObservableComponent } from './http API/http-observable/http-observable.component';
+import { HttpJsonpComponent } from './http API/http-jsonp/http-jsonp.component';
+import { Jsonp, JsonpModule, Response } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -60,10 +62,11 @@ import { HttpObservableComponent } from './http API/http-observable/http-observa
     ProviderChildComponent,
     HttpComponent,
     HttpPromiseComponent,
-    HttpObservableComponent
+    HttpObservableComponent,
+    HttpJsonpComponent
 ],
   imports: [
-    BrowserModule, ReactiveFormsModule, FormsModule, HttpModule
+    BrowserModule, ReactiveFormsModule, FormsModule, JsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

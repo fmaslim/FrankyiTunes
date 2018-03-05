@@ -1,0 +1,15 @@
+<form class="form-inline">
+  <div class="form-group">
+    <label>Search</label>
+    <input type="search"
+           class="form-control"
+           placeholder="Enter a search string"
+           [formControl]="searchField">
+  </div>
+</form>
+
+<ul class="list-group">
+  <li *ngFor="let track of results | async">
+    {{ track.name }}
+  </li>
+</ul>
