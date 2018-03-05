@@ -38,6 +38,7 @@ import { Http, HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpComponent } from './http API/http/http.component';
 import { HttpPromiseComponent } from './http API/http-promise/http-promise.component';
+import { HttpObservableComponent } from './http API/http-observable/http-observable.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { HttpPromiseComponent } from './http API/http-promise/http-promise.compo
     ProvidersComponent,
     ProviderChildComponent,
     HttpComponent,
-    HttpPromiseComponent
+    HttpPromiseComponent,
+    HttpObservableComponent
 ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule, HttpModule
