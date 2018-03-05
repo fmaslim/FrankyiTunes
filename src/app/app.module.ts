@@ -17,6 +17,22 @@ import { ReactiveModelFormComponent } from './forms/reactive-model-form/reactive
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
 import { JokeModelDrivenFormComponent } from './forms/joke-model-driven-form/joke-model-driven-form.component';
 import { JokeListModelDrivenComponent } from './forms/joke-list-model-driven/joke-list-model-driven.component';
+import { ProvidersComponent } from './dependency injection/providers/providers.component';
+import { ProviderChildComponent } from './dependency injection/provider-child/provider-child.component';
+
+// For Service providers, deciding where to configure the provider and understanding
+// the difference is key in understanding how to architect an Angular application
+
+// If we want an instance of a dependency to be shared globally, and share state across the application
+// configure it on NgModule
+
+// If we want a separate instance of a dependency to be shared across each instance of a component
+// and its children, we configure it on the components providers property
+
+// If we want a separate instance of a dependency to be shared across each instance of a component
+// and only its view children, we configure it on the components viewProviders property
+
+import { SimpleService } from './dependency injection/providers/providers.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +49,14 @@ import { JokeListModelDrivenComponent } from './forms/joke-list-model-driven/jok
     ReactiveModelFormComponent,
     TemplateDrivenFormComponent,
     JokeModelDrivenFormComponent,
-    JokeListModelDrivenComponent
+    JokeListModelDrivenComponent,
+    ProvidersComponent,
+    ProviderChildComponent
 ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule
   ],
-  providers: [],
+  providers: [SimpleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
