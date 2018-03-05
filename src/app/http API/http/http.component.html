@@ -1,24 +1,34 @@
 <div class="row">
   <button type="button" class="btn btn-primary" (click)="doGet()">GET</button>
-  {{ getData }}
+  <pre>{{ getData | json }}</pre>
 </div>
 
 <div class="row">
   <button type="button" class="btn btn-primary" (click)="doPost()">POST</button>
-  {{ postData }}
+  <pre>{{ postData | json }}</pre>
 </div>
 
 <div class="row">
   <button type="button" class="btn btn-primary" (click)="doPut()">PUT</button>
-  {{ putData }}
+  <pre>{{ putData | json }}</pre>
 </div>
 
 <div class="row">
   <button type="button" class="btn btn-primary" (click)="doDelete()">DELETE</button>
-  {{ deleteData }}
+  <pre>{{ deleteData | json }}</pre>
 </div>
 
 <div class="row">
-    <button type="button" class="btn btn-primary" (click)="doGetAsPromise()">GET as Promise</button>
-    {{ getAsPromiseData }}
-  </div>
+  <button type="button" class="btn btn-primary" (click)="doGetAsPromise()">GET as Promise</button>
+  <pre>{{ getAsPromiseData | json }}</pre>
+</div>
+
+<div class="row">
+  <button type="button" class="btn btn-primary" (click)="doGetAsPromiseError()">GET as Promise Error</button>
+  <pre>{{ getAsPromiseErrorData | json }}</pre>
+</div>
+
+<div class="row">
+  <button type="button" class="btn btn-primary" (click)="doGetWithHeaders()">GET with Headers</button>
+  <pre>{{ getWithHeadersData | json }}</pre>
+</div>
