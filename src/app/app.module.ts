@@ -37,6 +37,7 @@ import { SimpleService } from './dependency injection/providers/providers.compon
 import { Http, HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpComponent } from './http API/http/http.component';
+import { HttpPromiseComponent } from './http API/http-promise/http-promise.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { HttpComponent } from './http API/http/http.component';
     ProvidersComponent,
     ProviderChildComponent,
     HttpComponent,
+    HttpPromiseComponent
 ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule, HttpModule
