@@ -42,6 +42,18 @@ import { HttpObservableComponent } from './http API/http-observable/http-observa
 import { HttpJsonpComponent } from './http API/http-jsonp/http-jsonp.component';
 import { Jsonp, JsonpModule, Response } from '@angular/http';
 
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './routes/home/home.component';
+import { SearchComponent } from './routes/search/search.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'find', redirectTo: 'search' },
+  { path: 'search', component: SearchComponent },
+  { path: '**', component: HomeComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,10 +75,13 @@ import { Jsonp, JsonpModule, Response } from '@angular/http';
     HttpComponent,
     HttpPromiseComponent,
     HttpObservableComponent,
-    HttpJsonpComponent
+    HttpJsonpComponent,
+    HomeComponent,
+    SearchComponent
 ],
   imports: [
-    BrowserModule, ReactiveFormsModule, FormsModule, JsonpModule
+    BrowserModule, ReactiveFormsModule, FormsModule, JsonpModule,
+    RouterModule.forRoot(routes, {useHash: true})
   ],
   providers: [],
   bootstrap: [AppComponent]
