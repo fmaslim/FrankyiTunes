@@ -4,6 +4,8 @@ import { SearchItem } from '../http-promise/http-promise.component';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 @Injectable()
 export class SearchServiceWithJsonp {
