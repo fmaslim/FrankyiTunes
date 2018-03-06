@@ -109,6 +109,8 @@ const routes: Routes = [
 ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule, JsonpModule,
+    // The HashLocationStrategy is used so that people can link to a particular section in an HTML page (anchor tags)
+    // And anything past the # sign never gets sent to the server
     RouterModule.forRoot(routes, {useHash: true})
   ],
   providers: [UserService, OnlyLoggedInUserGuard,
