@@ -55,7 +55,14 @@ const routes: Routes = [
   { path: 'find', redirectTo: 'search' },
   { path: 'search', component: SearchComponent },
   { path: 'artist', component: ArtistComponent },
-  { path: 'artist/:artistId', component: ArtistComponent },
+  { path: 'artist/:artistId',
+    component: ArtistComponent,
+    children: [
+      { path: '', redirectTo: 'tracks', pathMatch: 'full' },
+      { path: 'tracks', component: ArtistTrackListComponent },
+      { path: 'albums', component: ArtistAlbumListComponent },
+      { path: '**', component: ArtistTrackListComponent }
+    ] },
   { path: '**', component: HomeComponent }
 ];
 

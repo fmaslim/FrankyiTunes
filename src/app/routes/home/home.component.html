@@ -4,4 +4,12 @@
 
 {{ data }}
 
-<a [routerLink]="['artist', 1]">Artist 1</a>
+<!--
+  This code below does not work, because it is relative to the current URL the page is in
+  Instead, what needs to happen is for the application to navigate to the ROOT of the application
+  by pre-pending / to the path
+ -->
+<!-- <a [routerLink]="['artist', 1]">Artist 1</a> -->
+
+<a [routerLink]="['/artist', 1]">Artist 1</a>
+
