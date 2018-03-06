@@ -45,12 +45,17 @@ import { Jsonp, JsonpModule, Response } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './routes/home/home.component';
 import { SearchComponent } from './routes/search/search.component';
+import { ArtistComponent } from './routes/artist/artist.component';
+import { ArtistTrackListComponent } from './routes/artist-track-list/artist-track-list.component';
+import { ArtistAlbumListComponent } from './routes/artist-album-list/artist-album-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home/:id', component: HomeComponent },
   { path: 'find', redirectTo: 'search' },
   { path: 'search', component: SearchComponent },
+  { path: 'artist', component: ArtistComponent },
+  { path: 'artist/:artistId', component: ArtistComponent },
   { path: '**', component: HomeComponent }
 ];
 
@@ -77,7 +82,10 @@ const routes: Routes = [
     HttpObservableComponent,
     HttpJsonpComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    ArtistComponent,
+    ArtistTrackListComponent,
+    ArtistAlbumListComponent
 ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule, JsonpModule,
