@@ -48,7 +48,7 @@ import { SearchComponent } from './routes/search/search.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home/:id', component: HomeComponent },
   { path: 'find', redirectTo: 'search' },
   { path: 'search', component: SearchComponent },
   { path: '**', component: HomeComponent }
