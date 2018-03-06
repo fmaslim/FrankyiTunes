@@ -43,26 +43,36 @@ import { HttpJsonpComponent } from './http API/http-jsonp/http-jsonp.component';
 import { Jsonp, JsonpModule, Response } from '@angular/http';
 
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './routes/home/home.component';
+import { HomeComponent, AlwaysAuthGuard, OnlyLoggedInUserGuard } from './routes/home/home.component';
+import { AlwaysAuthChildrenGuard, UnsearchedTermGuard } from './routes/home/home.component';
 import { SearchComponent } from './routes/search/search.component';
 import { ArtistComponent } from './routes/artist/artist.component';
 import { ArtistTrackListComponent } from './routes/artist-track-list/artist-track-list.component';
 import { ArtistAlbumListComponent } from './routes/artist-album-list/artist-album-list.component';
+import { GoogleComponent } from './routes/google/google.component';
+import { YahooComponent } from './routes/yahoo/yahoo.component';
+import { MicrosoftComponent } from './routes/microsoft/microsoft.component';
+import { UserService } from './routes/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, canDeactivate: [ UnsearchedTermGuard ] },
   { path: 'home/:id', component: HomeComponent },
   { path: 'find', redirectTo: 'search' },
   { path: 'search', component: SearchComponent },
-  { path: 'artist', component: ArtistComponent },
+  { path: 'artist', component: ArtistComponent, canActivate: [ OnlyLoggedInUserGuard, AlwaysAuthGuard ] },
   { path: 'artist/:artistId',
     component: ArtistComponent,
+    canActivateChild: [AlwaysAuthChildrenGuard],
     children: [
       { path: '', redirectTo: 'tracks', pathMatch: 'full' },
       { path: 'tracks', component: ArtistTrackListComponent },
       { path: 'albums', component: ArtistAlbumListComponent },
       { path: '**', component: ArtistTrackListComponent }
     ] },
+  { path: 'google', component: GoogleComponent },
+  { path: 'yahoo', component: YahooComponent },
+  { path: 'microsoft', component: MicrosoftComponent },
   { path: '**', component: HomeComponent }
 ];
 
@@ -92,13 +102,18 @@ const routes: Routes = [
     SearchComponent,
     ArtistComponent,
     ArtistTrackListComponent,
-    ArtistAlbumListComponent
+    ArtistAlbumListComponent,
+    GoogleComponent,
+    YahooComponent,
+    MicrosoftComponent
 ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule, JsonpModule,
     RouterModule.forRoot(routes, {useHash: true})
   ],
-  providers: [],
+  providers: [UserService, OnlyLoggedInUserGuard,
+    AlwaysAuthGuard, AlwaysAuthChildrenGuard,
+    UnsearchedTermGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

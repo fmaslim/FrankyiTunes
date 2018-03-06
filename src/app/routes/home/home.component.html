@@ -2,7 +2,9 @@
   home works!
 </p>
 
-{{ data }}
+<input type="text" class="form-control" [formControl]="searchField">
+
+{{ searchField.value }}
 
 <!--
   This code below does not work, because it is relative to the current URL the page is in
