@@ -54,6 +54,21 @@ import { YahooComponent } from './routes/yahoo/yahoo.component';
 import { MicrosoftComponent } from './routes/microsoft/microsoft.component';
 import { UserService } from './routes/home/home.component';
 
+// There are 2 types of routing strategies:
+// 1. HashLocationStrategy
+// 2. PathLocationStrategy
+
+// 1. HashLocationStrategy is ideal for CLIENT-side routing, because:
+// a. it's part of the URl so it can be bookmarked and set to other people
+// b. it won't confuse the server side since the hash fragment is never sent to the server
+// c. It can be programmatically changed via Javascript
+
+// 2. PathLocationStrategy takes advantage of a relatively new HTML5 API called pushstate
+// By using pushstate, we can change the URL and NOT have the browser request the page from the server
+// and without needing to use a hash fragment
+
+// Read more on routing strategy in "Angular from theory to practice", page 548
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, canDeactivate: [ UnsearchedTermGuard ] },
